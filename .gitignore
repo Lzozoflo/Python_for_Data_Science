@@ -5,3 +5,6 @@ node_modules/
 build/
 dist/
 *out*
+
+*.subject.pdf
+jeanmi_CONVENTIONAL_COMMITS*
