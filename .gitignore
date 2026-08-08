@@ -8,3 +8,5 @@ dist/
 
 *.subject.pdf
 jeanmi_CONVENTIONAL_COMMITS*
+
+test.*
