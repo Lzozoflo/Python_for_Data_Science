@@ -1,4 +1,3 @@
-from ft_filter import ft_filter
 from sys import argv
 
 
@@ -23,7 +22,7 @@ def filterstring(string: str, n: int):
         List
             A list of words from str(string) have a lenth greater than N.
     """
-    return list(ft_filter(lambda word: len(word) > n, string.split(' ')))
+    return list(filter(lambda word: len(word) > n, string.split(' ')))
     pass
 
 

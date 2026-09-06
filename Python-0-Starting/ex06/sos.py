@@ -14,26 +14,16 @@ morse = {
 }
 
 
-morse_inv = {}
-for cle, valeur in morse.items():
-    morse_inv[valeur] = cle
-
-
-def sos(string: str, mode: int):
+def sos(string: str):
     """
     Description
     -----------
         Make a program that takes a string as an argument and encodes it into
         Morse Code.
 
-        Mode 1 str to morse
-        Mode 2 morse to str
-
     Parameters
     ----------
         param1 : type
-            Description
-        param2 : type
             Description
 
     Returns
@@ -41,13 +31,7 @@ def sos(string: str, mode: int):
         type
             Description
     """
-    if mode == 1:
-        strToMorse = [morse[c] for c in string.upper()]
-         
-        print(" ".join([morse[c] for c in string.upper()]))
-    else:
-        morseToStr = [morse_inv[c] for c in string]
-        print(" ".join(morseToStr))
+    print(" ".join([morse[c] for c in string.upper()]))
 
 
 def main():
@@ -60,23 +44,12 @@ def main():
             •Complete Morse characters are separated by a single space.
             •A space character is represented by a slash /.
     """
-
     try:
-
-        # THIS
 
         assert len(argv) <= 2 and \
                 re.fullmatch(r"[A-Za-z0-9 ]*", argv[1]), "he arguments are bad"
 
-        sos(argv[1], 1)
-
-        # OR
-
-        if len(argv) != 2 or not re.fullmatch(r"[A-Za-z0-9 ]*", argv[1]):
-            raise AssertionError("he arguments are bad")
-
-        sos(argv[1], 1)
-
+        sos(argv[1])
 
     except Exception as e:
         print(f"{type(e).__name__} : {e}")

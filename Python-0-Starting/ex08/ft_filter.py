@@ -1,46 +1,47 @@
-# class ft_filter:
-#     """ft_filter(function or None, iterable) --> filter object
-
-# Return an iterator yielding those items of iterable for which function(item)
-# is true. If function is None, return the items that are true."""
-
-#     __module__ = None
-#     def __init__(self, function, iterable):
-#         self.function = function if function is not None else bool
-#         self.iterable = iterable
-
-#     def __iter__(self):
-#         function = self.function
-#         for element in self.iterable:
-#             if function(element):
-#                 yield element
-
-#     def __next__(self):
-#         for element in self.iterable:
-#             if self.function(element):
-#                 return element
-#         raise StopIteration
-
+# Recode your own ft_filter, it should behave like the original built-in
+# function (it should return the same thing as "print(filter.__doc__)"),
+# you should use list com-prehensions to recode your ft_filter.
 
 class ft_filter:
-    """
-Recode your own ft_filter, it should behave like the original built-in
-function (it should return the same thing as "print(filter.__doc__)"),
-you should use list com-prehensions to recode your ft_filter.
-
-ft_filter(function or None, iterable) --> filter object
+    """ft_filter(function or None, iterable) --> filter object
 
 Return an iterator yielding those items of iterable for which function(item)
 is true. If function is None, return the items that are true."""
 
     __module__ = None
-
     def __init__(self, function, iterable):
         self.function = function if function is not None else bool
         self.iterable = iterable
 
     def __iter__(self):
-        return iter([item for item in self.iterable if self.function(item)])
+        function = self.function
+        for element in self.iterable:
+            if function(element):
+                yield element
+
+    def __next__(self):
+        for element in self.iterable:
+            if self.function(element):
+                return element
+        raise StopIteration
+
+
+# class ft_filter:
+#     """
+
+# ft_filter(function or None, iterable) --> filter object
+
+# Return an iterator yielding those items of iterable for which function(item)
+# is true. If function is None, return the items that are true."""
+
+#     __module__ = None
+
+#     def __init__(self, function, iterable):
+#         self.function = function if function is not None else bool
+#         self.iterable = iterable
+
+#     def __iter__(self):
+#         return iter([item for item in self.iterable if self.function(item)])
 
 
 def main():

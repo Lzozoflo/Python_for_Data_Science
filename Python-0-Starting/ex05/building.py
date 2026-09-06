@@ -1,4 +1,4 @@
-from sys import argv
+from sys import argv, stdin
 
 # print(sys.version)
 
@@ -17,13 +17,23 @@ def main():
 
     """
     try:
-        assert len(argv) <= 2, "more than one argument is provided"
+        lenargv = len(argv)
+        assert lenargv <= 2, "more than one argument is provided"
 
         punctuation = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
-        str = argv[1]
+
+        if (lenargv != 1):
+            str = argv[1]
+        else:
+            print("What is the text to count?")
+            str = stdin.read()
+            # str = input("What is the text to count?\n")
+            # print(repr(str))
 
         print(f"The text contains {len(str)} characters:")
-        print(f"{sum(int(c.isupper()) for c in str)} upper letters")
+
+        print(f"{sum([int(c.isupper()) for c in str])} upper letters")
+
         print(f"{sum(int(c.islower()) for c in str)} lower letters")
         # print(f"{len([c for c in str if c.islower()])} lower letters")
         # print(f"{sum(1 for let in str if let.islower())} lower letters")

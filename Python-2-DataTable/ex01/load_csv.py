@@ -10,5 +10,5 @@ def load(path: str) -> pd.DataFrame:
         row , columns = df.shape
         print(f"Loading dataset of dimensions ({row}, {columns})")
     except FileNotFoundError:
-        print(f"Le fichier {FILE_PATH} n'existe pas dans ./")
+        print(f"Le fichier {FILE_PATH} n'existe pas.")
     return df
