@@ -41,7 +41,7 @@ is true. If function is None, return the items that are true."""
 #         self.iterable = iterable
 
 #     def __iter__(self):
-#         return iter([item for item in self.iterable if self.function(item)])
+#         return iter([item for item in self.iterable if self.function(item])
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
 
         # print(filter.__doc__)
 
-        # print(ft_filter.__doc__)
+        # print(ft_filter.__doc__))
 
         # def myFunc(x):
         #     return x >= 18
