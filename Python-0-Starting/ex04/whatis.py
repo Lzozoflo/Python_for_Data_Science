@@ -2,6 +2,7 @@ from sys import argv
 
 # print(sys.version)
 
+
 def EvenOdd(arg):
     if arg % 2 == 0:
         print("I'm Even.")
@@ -16,9 +17,9 @@ def main():
         for arg in argv[1:]:
             try:
                 EvenOdd(int(arg))
-            except ValueError as e:
+            except ValueError:
                 raise AssertionError("argument is not an integer")
-        
+
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
 
@@ -26,11 +27,8 @@ def main():
 main()
 
 
-
 # if __name__ == '__main__':
 #     main()
-
-
 
 # > python whatis.py 14
 # I'm Even.

@@ -9,6 +9,7 @@ Return an iterator yielding those items of iterable for which function(item)
 is true. If function is None, return the items that are true."""
 
     __module__ = None
+
     def __init__(self, function, iterable):
         self.function = function if function is not None else bool
         self.iterable = iterable

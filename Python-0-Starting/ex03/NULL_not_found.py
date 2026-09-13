@@ -16,9 +16,9 @@ def NULL_not_found(object: any) -> int:
 
         case "bool" if object is False:
             print(f"Fake: {object} {t}")
-            
+
         case _:
-            print(f"Type not Found")
+            print("Type not Found")
             return 1
 
     return 0
