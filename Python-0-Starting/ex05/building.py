@@ -1,50 +1,32 @@
+import string
 from sys import argv, stdin
 
-# print(sys.version)
+
+def count_chars(text: str) -> None:
+    """Count and display character categories in the given text."""
+    print(f"The text contains {len(text)} characters:")
+    print(f"{sum(c.isupper() for c in text)} upper letters")
+    print(f"{sum(c.islower() for c in text)} lower letters")
+    print(f"{sum(c in string.punctuation for c in text)} punctuation marks")
+    print(f"{sum(c.isspace() for c in text)} spaces")
+    print(f"{sum(c.isdigit() for c in text)} digits")
 
 
-def main():
-    """
-    Description
-    -----------
-    This time you have to make a real autonomous program, with a main,
-    which takes a single string argument and displays the sums of its
-    upper-case characters, lower-case characters, punctuation characters,
-    digits, and spaces
-    •If none or nothing is provided, the user is prompted to provide a string.
-    •If more than one argument is provided to the program, print an
-    AssertionError.
-
-    """
+def main() -> None:
+    """Parse arguments and run character counter."""
     try:
-        lenargv = len(argv)
-        assert lenargv <= 2, "more than one argument is provided"
-
-        punctuation = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
-
-        if (lenargv != 1):
-            str = argv[1]
+        assert len(argv) <= 2, "more than one argument is provided"
+        if len(argv) == 2 and argv[1]:
+            text = argv[1]
         else:
             print("What is the text to count?")
-            str = stdin.read()
-            # str = input("What is the text to count?\n")
-            # print(repr(str))
-
-        print(f"The text contains {len(str)} characters:")
-
-        print(f"{sum([int(c.isupper()) for c in str])} upper letters")
-
-        print(f"{sum(int(c.islower()) for c in str)} lower letters")
-        # print(f"{len([c for c in str if c.islower()])} lower letters")
-        # print(f"{sum(1 for let in str if let.islower())} lower letters")
-        print(f"{sum(c in set(punctuation) for c in str)} punctuation marks")
-        print(f"{sum(int(c.isspace()) for c in str)} spaces")
-        print(f"{sum(int(c.isdigit()) for c in str)} digits")
+            text = stdin.read()
+        count_chars(text)
     except Exception as e:
-        print(f"{type(e).__name__} : {e}")
+        print(f"{type(e).__name__}: {e}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 # The text contains 171 characters:

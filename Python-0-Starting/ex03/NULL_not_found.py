@@ -1,4 +1,7 @@
-def NULL_not_found(object: any) -> int:
+from typing import Any
+
+
+def NULL_not_found(object: Any) -> int:
     t = type(object)
 
     match t.__name__:
@@ -7,18 +10,13 @@ def NULL_not_found(object: any) -> int:
 
         case "float" if object != object:
             print(f"Cheese: {object} {t}")
-
         case "int" if object == 0:
             print(f"Zero: {object} {t}")
-
         case "str" if len(object) == 0:
             print(f"Empty: {object} {t}")
-
         case "bool" if object is False:
             print(f"Fake: {object} {t}")
-
         case _:
             print("Type not Found")
             return 1
-
     return 0

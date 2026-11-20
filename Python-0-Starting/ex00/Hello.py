@@ -7,11 +7,7 @@ ft_dict = {"Hello": "titi!"}
 ft_list[1] = "World!"
 
 # ---  TUPLE  ---
-# ft_tuple = ("Hello", "France!")
-
-tmp = list(ft_tuple)
-tmp[1] = "France!"
-ft_tuple = tuple(tmp)
+ft_tuple = ft_tuple[:1] + ("France!",)
 
 # ---  SET  ---
 ft_set.remove("tutu!")

@@ -1,0 +1,13 @@
+__pycache__
+
+*.log
+*.env*
+*secret*
+node_modules/
+build/
+dist/
+*out*
+
+*.subject.pdf
+
+test.*

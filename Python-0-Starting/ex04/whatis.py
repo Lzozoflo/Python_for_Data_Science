@@ -24,7 +24,8 @@ def main():
         print(f"{type(e).__name__}: {e}")
 
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 # if __name__ == '__main__':
