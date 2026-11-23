@@ -1,4 +1,7 @@
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(
+    height: list[int | float],
+    weight: list[int | float]
+) -> list[int | float]:
     return [w / (h ** 2) for h, w in zip(height, weight)]
 
 

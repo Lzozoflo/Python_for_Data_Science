@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def slice_me(family: list, start: int, end: int) -> list:
     lenrowfamily = len(family[0])
     for row in family:
@@ -13,11 +14,3 @@ def slice_me(family: list, start: int, end: int) -> list:
     print(f"My new shape is : {np.shape(newar)}")
     return newar
 
-
-
-family = [[1.80, 78.4],
-[2.15, 102.7],
-[2.10, 98.5],
-[1.88, 75.2]]
-print(slice_me(family, 0, 2))
-print(slice_me(family, 1, -2))

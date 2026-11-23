@@ -17,7 +17,8 @@ def main():
 
         print(f"New shape after slicing: {zoomed_array.shape}")
         print(zoomed_array)
-        # matplotlib pour display depuis un array https://matplotlib.org/stable/tutorials/images.html
+        # matplotlib pour display depuis un array
+        # https://matplotlib.org/stable/tutorials/images.html
         plt.imshow(zoomed_array, cmap='gray')
         plt.show()
 
