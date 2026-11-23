@@ -20,4 +20,4 @@ print(all_thing_is_obj(10))
 # Brian is in the kitchen : <class 'str'>$
 # Toto is in the kitchen : <class 'str'>$
 # Type not found$
-# 42
+# 42$

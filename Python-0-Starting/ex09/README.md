@@ -38,25 +38,32 @@ name = "PACKAGE_NAME"
 version = "PACKAGE_VERSION"
 description = "PACKAGE_DESCRIPTION"
 readme = "README.md"
-requires-python = "<=3.10"
+requires-python = ">=3.10"
 ``` 
 
 
-## Creat the .tar
+### Creat the .tar
 
 With that `CMD`
 ```sh
 python3 -m build ex09 
 ```
 dist was created with a `.tar.gz` and/or `whl`
+```
+tar -ztvf dist/ft_package-0.0.1.tar.gz 
+```
 
-## Install
+### Install
 ```sh
 uv pip install ex09/dist/ft_package-0.0.1.tar.gz 
 ```
 or
 ```sh
 uv pip install ex09/dist/ft_package-0.0.1-py3-none-any.whl
+```
+
+```
+pip show -v ft_package
 ```
 
 ## How to use
@@ -72,4 +79,12 @@ function()
 ### Start
 ```sh
 uv run python3 test.py
+```
+
+### ex09
+```
+python3 -m build 
+tar -ztvf dist/ft_package-0.0.1.tar.gz 
+# pip uninstall -y ft_package
+pip show -v ft_package
 ```

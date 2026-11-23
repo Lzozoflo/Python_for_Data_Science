@@ -1,7 +1,3 @@
-
-
-
-
 from sys import argv
 
 
@@ -35,7 +31,6 @@ def main() -> None:
                 raise AssertionError("The arguments are bad")
         else:
             raise AssertionError("The arguments are bad")
-            
         res = filterstring(text, n)
         print(res)
     except Exception as e:
@@ -45,3 +40,6 @@ def main() -> None:
 if __name__ == "__main__":
     # print(main.__doc__)
     main()
+
+# python filterstring.py 'Hello the World'4
+# ['Hello', 'World']

@@ -23,7 +23,7 @@ def main() -> None:
     """Validate arguments and print Morse encoding."""
     try:
         assert len(argv) == 2 and \
-                re.fullmatch(r"[A-Za-z0-9 ]*", argv[1]), "the arguments are bad"
+            re.fullmatch(r"[A-Za-z0-9 ]*", argv[1]), "the arguments are bad"
         print(encode_morse(argv[1]))
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
