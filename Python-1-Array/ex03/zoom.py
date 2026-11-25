@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+# uv pip install matplotlib
 from load_image import ft_load
 
 

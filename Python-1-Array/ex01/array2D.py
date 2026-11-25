@@ -12,5 +12,5 @@ def slice_me(family: list, start: int, end: int) -> list:
 
     print(f"My shape is : {np.shape(ar)}")
     print(f"My new shape is : {np.shape(newar)}")
-    return newar
 
+    return newar
