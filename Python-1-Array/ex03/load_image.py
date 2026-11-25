@@ -1,5 +1,7 @@
 from PIL import Image
+# uv pip install Pillow
 import numpy as np
+#  uv pip install numpy
 
 
 def ft_load(path: str) -> np.ndarray:
@@ -8,7 +10,7 @@ def ft_load(path: str) -> np.ndarray:
     try:
         img = Image.open(IMAGE_PATH)
         ar = np.array(img)
-        print(f"{np.shape(ar)}")
+        print(f"The shape of image is: {np.shape(ar)}")
         return ar
 
     except FileNotFoundError:
